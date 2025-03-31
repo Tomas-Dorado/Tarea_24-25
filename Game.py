@@ -70,3 +70,10 @@ class Game:
             print("Game is not running.")
         elif self.player:
             print(f"Score: {self.score} | Lives: {self.player.lives}")
+
+    def remove_opponent(self, opponent):
+        if opponent in self.opponents:
+            self.opponents.remove(opponent)
+            print(f"Opponent {opponent} removed!")
+            if len(self.opponents) == 0:
+                self.spawn_final_boss()
