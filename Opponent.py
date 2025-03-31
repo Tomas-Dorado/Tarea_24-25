@@ -20,3 +20,12 @@ class Opponent(Character):
     def act(self):
         # Lógica para el comportamiento del enemigo
         pass
+
+    def collide(self, score):
+        # Lógica para manejar la colisión con un disparo
+        if self.is_alive:  # Solo suma puntos si el oponente está vivo
+            self.health -= 1  # Reduce la salud del oponente
+            if self.health <= 0:
+                self.is_alive = False
+                score += 1  # Suma un punto a la puntuación
+        return score
