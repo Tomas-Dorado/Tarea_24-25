@@ -1,3 +1,6 @@
+from Boss import FinalBoss
+from Player import Player
+from Opponent import Opponent
 # Clase principal que representa el juego en su totalidad
 class Game:
     def __init__(self):
@@ -51,3 +54,9 @@ class Game:
             print(f"Player hit! Lives remaining: {self.player.lives}")
             if self.player.lives <= 0:
                 self.end_game()
+
+    def spawn_final_boss(self):
+        if len(self.opponents) == 0 and self.is_running:
+            final_boss = FinalBoss(speed=2 * Opponent.speed)
+            self.add_opponent(final_boss)
+            print("Final Boss has appeared!")
