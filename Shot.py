@@ -21,3 +21,8 @@ class Shot(Entity):
 
     def update_position(self):
         self.move(self.speed * self.direction[0], self.speed * self.direction[1])
+
+    def collide(self, target):
+        """Reduce la vida del objetivo si hay colisión."""
+        if self.hit_target(target):
+            target.health -= 1

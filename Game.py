@@ -44,3 +44,10 @@ class Game:
     def increment_score(self, points):
         self.score += points
         print(f"Score updated: {self.score}")
+
+    def check_player_hit(self, enemy_shot):
+        if self.player and self.player.is_hit_by(enemy_shot):
+            self.player.lives -= 1
+            print(f"Player hit! Lives remaining: {self.player.lives}")
+            if self.player.lives <= 0:
+                self.end_game()
