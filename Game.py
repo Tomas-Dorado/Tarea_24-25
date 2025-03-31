@@ -60,3 +60,7 @@ class Game:
             final_boss = FinalBoss(speed=2 * Opponent.speed)
             self.add_opponent(final_boss)
             print("Final Boss has appeared!")
+
+    def reset_score(self):
+        self.score = 0
+        print("Score reset to 0.")
