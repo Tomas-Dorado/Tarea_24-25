@@ -14,3 +14,5 @@ class Boss(Opponent):
     def take_damage(self, damage):
         self.health -= damage
         print(f"Boss takes {damage} damage, remaining health: {self.health}")
+
+    
