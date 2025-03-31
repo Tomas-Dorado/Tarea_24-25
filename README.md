@@ -1,4 +1,5 @@
 # Tarea 24-25
+https://github.com/Tomas-Dorado/Tarea_24-25.git
 
 Este proyecto es un juego básico implementado en Python, que incluye clases para representar jugadores, enemigos, disparos y la lógica principal del juego.
 
