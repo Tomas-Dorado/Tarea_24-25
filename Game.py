@@ -1,4 +1,4 @@
-from Boss import FinalBoss
+from Boss import Boss
 from Player import Player
 from Opponent import Opponent
 # Clase principal que representa el juego en su totalidad
