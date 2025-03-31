@@ -37,7 +37,10 @@ class Game:
 
     def end_game(self):
         self.is_running = False
-        print("Game ended!")
+        if self.player and self.player.lives > 0 and all(isinstance(opponent, FinalBoss) for opponent in self.opponents):
+            print("Victory! You defeated the Final Boss!")
+        else:
+            print("Game ended!")
 
     def convert_opponent_to_star(self, opponent):
         if opponent in self.opponents:
