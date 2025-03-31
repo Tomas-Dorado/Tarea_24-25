@@ -8,6 +8,9 @@ class Character(Entity):
         self.lives = lives
         self.is_alive = True
 
+    def __str__(self):
+        return f"Character at ({self.x}, {self.y}), Health: {self.health}, Lives: {self.lives}, Is Alive: {self.is_alive}"
+
     def take_damage(self, amount):
         self.health -= amount
         if self.health <= 0:

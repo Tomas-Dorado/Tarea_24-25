@@ -15,3 +15,5 @@ class Entity:
     def draw(self, screen):
         if self.image:
             screen.blit(self.image, (self.x, self.y))  # Dibuja la imagen en la pantalla
+
+    
