@@ -60,7 +60,7 @@ class Game:
 
     def spawn_final_boss(self):
         if len(self.opponents) == 0 and self.is_running:
-            final_boss = FinalBoss(speed=2 * Opponent.speed)
+            final_boss = Boss(speed=2 * Opponent.speed)
             self.add_opponent(final_boss)
             print("Final Boss has appeared!")
 
