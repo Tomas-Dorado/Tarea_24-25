@@ -64,3 +64,9 @@ class Game:
     def reset_score(self):
         self.score = 0
         print("Score reset to 0.")
+
+    def display_score_and_lives(self):
+        if not self.is_running:
+            print("Game is not running.")
+        elif self.player:
+            print(f"Score: {self.score} | Lives: {self.player.lives}")
