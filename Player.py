@@ -1,5 +1,6 @@
 from Character import Character
 import time
+from Shot import Shot
 
 # Clase que representa al jugador principal
 class Player(Character):
@@ -14,14 +15,22 @@ class Player(Character):
     def increase_score(self, points):
         self.score += points
 
-    def move(self, dx, dy):
-        # Actualiza la posición del jugador
-        self.x += dx
-        self.y += dy
+    def move(self, direction):
+        # Actualiza la posición del jugador según la dirección
+        if direction == "up":
+            self.y += 1
+        elif direction == "down":
+            self.y -= 1
+        elif direction == "left":
+            self.x -= 1
+        elif direction == "right":
+            self.x += 1
 
     def shoot(self):
-        # Lógica para disparar (puedes personalizarla según tu juego)
-        print("Player is shooting!")
+        # Crear una instancia de Shot en la posición actual del jugador
+        shot = Shot(self.x, self.y)
+        print(f"Player is shooting from position ({self.x}, {self.y})!")
+        return shot
 
     def take_damage(self, damage):
         # Resta salud al jugador

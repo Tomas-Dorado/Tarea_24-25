@@ -1,5 +1,4 @@
 from Entity import Entity
-from Shot import Shot  # Import the Shot class
 
 # Clase que representa cualquier personaje con vida dentro del juego
 class Character(Entity):
@@ -19,23 +18,10 @@ class Character(Entity):
                 self.is_alive = False
 
     def move(self, direction):
-        # Update the character's position based on the given direction
-        if direction == "up":
-            self.y -= 1
-        elif direction == "down":
-            self.y += 1
-        elif direction == "left":
-            self.x -= 1
-        elif direction == "right":
-            self.x += 1
-        else:
-            print("Invalid direction. Use 'up', 'down', 'left', or 'right'.")
+       pass
 
     def shoot(self):
-        # Create a new shot originating from the character's position
-        shot = Shot(self.x, self.y, self.direction)
-        print(f"Shot fired from ({self.x}, {self.y}) in direction '{self.direction}'")
-        return shot
+        pass
 
     def collide(self, other):
         # Check if the other object is an instance of Entity

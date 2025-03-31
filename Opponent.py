@@ -1,4 +1,5 @@
 from Character import Character
+from Shot import Shot
 
 # Clase que representa a los enemigos
 class Opponent(Character):
@@ -9,13 +10,16 @@ class Opponent(Character):
     def __str__(self):
         return f"Opponent at ({self.x}, {self.y}), Health: {self.health}, Is Star: {self.is_star}, Is Alive: {self.is_alive}"
 
-    def move(self):
-        # Lógica para mover al enemigo
-        pass
+    def move(self, direction="down"):
+        # Lógica para mover al enemigo hacia arriba o hacia abajo
+        if direction == "down":
+            self.y += 1
+        elif direction == "up":
+            self.y -= 1
 
     def shoot(self):
-        # Lógica para disparar
-        pass
+        # Crea un disparo desde la posición actual del oponente
+        return Shot(self.x, self.y + 1, "down")
 
     def act(self):
         # Lógica para el comportamiento del enemigo
