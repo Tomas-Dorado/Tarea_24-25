@@ -35,3 +35,12 @@ class Game:
     def end_game(self):
         self.is_running = False
         print("Game ended!")
+
+    def convert_opponent_to_star(self, opponent):
+        if opponent in self.opponents:
+            self.opponents.remove(opponent)
+            print(f"Opponent {opponent} converted to a star!")
+            
+    def increment_score(self, points):
+        self.score += points
+        print(f"Score updated: {self.score}")
