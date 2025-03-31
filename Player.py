@@ -1,4 +1,5 @@
 from Character import Character
+import time
 
 # Clase que representa al jugador principal
 class Player(Character):
@@ -21,3 +22,22 @@ class Player(Character):
     def shoot(self):
         # Lógica para disparar (puedes personalizarla según tu juego)
         print("Player is shooting!")
+
+    def take_damage(self, damage):
+        # Resta salud al jugador
+        self.health -= damage
+        if self.health <= 0:
+            self.lives -= 1
+            if self.lives > 0:
+                print("Player lost a life! Respawning...")
+                self.respawn()
+            else:
+                print("Game Over!")
+                self.is_alive = False
+
+    def respawn(self):
+        # Lógica para renacer al jugador
+        time.sleep(2)  # Simula un breve tiempo de espera antes de renacer
+        self.health = 100  # Restaura la salud del jugador
+        self.x, self.y = 0, 0  # Reinicia la posición del jugador
+        self.is_alive = True
