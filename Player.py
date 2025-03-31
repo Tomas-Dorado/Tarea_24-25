@@ -7,6 +7,9 @@ class Player(Character):
         self.score = score
         self.lives = lives
 
+    def __str__(self):
+        return f"Player at ({self.x}, {self.y}), Health: {self.health}, Score: {self.score}, Lives: {self.lives}, Is Alive: {self.is_alive}"
+    
     def increase_score(self, points):
         self.score += points
 
