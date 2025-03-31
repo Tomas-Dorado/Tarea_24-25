@@ -1,11 +1,11 @@
-from Boss import Boss
+from Boss import Boss, FinalBoss
 from Player import Player
 from Opponent import Opponent
 # Clase principal que representa el juego en su totalidad
 class Game:
     def __init__(self):
         self.score = 0
-        self.player = None
+        self.player = Player()
         self.opponents = []
         self.shots = []
         self.is_running = False
