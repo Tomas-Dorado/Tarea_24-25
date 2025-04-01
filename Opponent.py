@@ -3,12 +3,13 @@ from Shot import Shot
 
 # Clase que representa a los enemigos
 class Opponent(Character):
-    def __init__(self, x=0, y=0, lives=2, is_star=False):
+    def __init__(self, x=0, y=0, lives=2, is_star=False, is_alive=True):
         super().__init__(x, y, lives) # Salud del oponente
         self.is_star = is_star  # Atributo que indica si ha sido convertido en estrella
+        self.is_alive = is_alive
     
     def __str__(self):
-        return f"Opponent at ({self.x}, {self.y}), Health: {self.life}, Is Star: {self.is_star}, Is Alive: {self.is_alive}"
+        return f"Opponent at ({self.x}, {self.y}), Health: {self.lives}, Is Star: {self.is_star}, Is Alive: {self.is_alive}"
 
     def move(self, direction="down"):
         # Lógica para mover al enemigo hacia arriba o hacia abajo

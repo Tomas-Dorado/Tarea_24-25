@@ -5,18 +5,17 @@ import time
 
 
 class Player(Character):
-    def __init__(self,x=0,y=0, name="name", score=0, lives=3):
-        super().__init__(x,y, lives)
+    def __init__(self, x=0, y=0, name="name", score=0, lives=3):
+        super().__init__(x, y, lives)
         self.name = name
         self.score = score
 
-    
     def __str__(self):
         return f"Player {self.name} with score {self.score} and lives {self.lives}"
 
     def move(self, direction):
         """
-        Moves the player in the specified direction.
+        Moves the player in the specified direction by updating x and y coordinates.
         :param direction: A string indicating the direction ('up', 'down', 'left', 'right').
         """
         valid_directions = ['up', 'down', 'left', 'right']
@@ -24,21 +23,24 @@ class Player(Character):
             print(f"Invalid direction: {direction}. Valid directions are: {valid_directions}")
             return
 
-        # Example logic for movement
+        # Update x and y based on the direction
         if direction == 'up':
-            print(f"{self.name} moves up.")
+            self.y += 1
+            print(f"{self.name} moves up to position ({self.x}, {self.y}).")
         elif direction == 'down':
-            print(f"{self.name} moves down.")
+            self.y -= 1
+            print(f"{self.name} moves down to position ({self.x}, {self.y}).")
         elif direction == 'left':
-            print(f"{self.name} moves left.")
+            self.x -= 1
+            print(f"{self.name} moves left to position ({self.x}, {self.y}).")
         elif direction == 'right':
-            print(f"{self.name} moves right.")
+            self.x += 1
+            print(f"{self.name} moves right to position ({self.x}, {self.y}).")
 
     def shoot(self):
         """
         Creates a shot fired by the player.
         """
-
         shot = Shot(self.name, is_enemy_shot=False)
         print(f"{self.name} shoots a shot!")
         return shot
@@ -67,8 +69,6 @@ class Player(Character):
         self.score = 0
         self.lives = 3
         print(f"{self.name} has been reset.")
-    
-  
 
     def respawn(self):
         """
