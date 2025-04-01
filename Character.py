@@ -2,8 +2,8 @@ from Entity import Entity
 from Shot import Shot  # Import the Shot class
 
 class Character(Entity):
-    def __init__(self, lives):
-        super().__init__()
+    def __init__(self,x,y, lives):
+        super().__init__(x,y)
         self.lives = lives
 
 

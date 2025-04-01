@@ -5,8 +5,8 @@ import time
 
 
 class Player(Character):
-    def __init__(self, name, score=0, lives=3):
-        super().__init__(name)
+    def __init__(self,x,y, name, score=0, lives=3):
+        super().__init__(x,y,name)
         self.score = score
         self.lives = lives
 
