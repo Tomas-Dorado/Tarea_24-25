@@ -5,10 +5,10 @@ import time
 
 
 class Player(Character):
-    def __init__(self,x,y, name, score=0, lives=3):
-        super().__init__(x,y,name)
+    def __init__(self,x=0,y=0, name="name", score=0, lives=3):
+        super().__init__(x,y, lives)
+        self.name = name
         self.score = score
-        self.lives = lives
 
     
     def __str__(self):

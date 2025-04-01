@@ -80,7 +80,7 @@ class Game:
             print(f"Player {self.player.name} is moving.")
         else:
             print("Game is not running or no player to update.")
-        self.player = Player(name=player_name)
+        self.player = Player(name= "name")
         self.player.lives = 3
         print(f"Player {self.player.name} initialized with {self.player.lives} lives.")
         self.player.score = 0
@@ -115,11 +115,11 @@ class Game:
                 print("Opponent is not a star.")
         else:
             print("Game is not running or no opponent to update.")
-        self.opponent = Opponent(is_star=is_star)
+        self.opponent = Opponent(is_star=True)
         self.opponent.lives = 3
         print(f"Opponent {self.opponent} initialized with {self.opponent.lives} lives.")
         self.opponent.score = 0
-        self.opponent = Opponent(is_star=is_star)
+        self.opponent = Opponent(is_star=True)
 
     
     
